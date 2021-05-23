@@ -18,36 +18,50 @@
     href="{{ url_for('static', filename='css/style.css') }}"
   />
 </head>
+
 <body>
   <div class="container">
     <form action="{{ url_for('predict') }}" method="POST">
-      <center><h2>Coivd-19 Diagnosis Form</h2></center>
+      <center><h2>Covid-19 Diagnosis Form</h2></center>
       <br />
+  
+      <!--  Row  -->
       <div class="row">
+        <!--  Col 1   -->
         <div class="col-md-6">
           <div class="form-group">
             <label for="first">First Name</label>
-            <input type="text" class="form-control" placeholder="" name="First" />
+            <input
+              type="text"
+              class="form-control"
+              placeholder=""
+              name="First"
+            />
           </div>
         </div>
-        <!--  col-md-6   -->
-
+        <!--  Col 2   -->
         <div class="col-md-6">
           <div class="form-group">
             <label for="last">Last Name</label>
-            <input type="text" class="form-control" placeholder="" name="last" />
+            <input
+              type="text"
+              class="form-control"
+              placeholder=""
+              name="last"
+            />
           </div>
         </div>
-        <!--  col-md-6   -->
       </div>
 
+      <!--  Row   -->
       <label for="newsletter">Other health conditions</label>
       <div class="checkbox">
         <label>
           <input type="checkbox" value="Fever" name="Fever" /> Fever
         </label>
         <label>
-          <input type="checkbox" value="Lack of taste" name="Lack of taste" /> Lack of taste
+          <input type="checkbox" value="Lack of taste" name="Lack of taste" />
+          Lack of taste
         </label>
         <label>
           <input type="checkbox" value="Diabetes" name="Diabetes" /> Diabetes
@@ -57,6 +71,7 @@
         </label>
       </div>
 
+      <!-- Record sound -->
       <label for="newsletter">Record voice sample</label>
       <div id="controls">
         <button id="recordButton">Record</button>
@@ -66,7 +81,7 @@
       <div id="formats">Format: start recording to see sample rate</div>
       <p><strong>Recordings:</strong></p>
       <ol id="recordingsList"></ol>
-
+      
       <button type="submit" class="btn btn-primary">Submit</button>
     </form>
   </div>

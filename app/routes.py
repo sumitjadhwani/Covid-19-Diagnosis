@@ -1,7 +1,7 @@
 from flask import Flask, request, render_template, redirect, url_for
 from app import app, APP_ROOT
 
-from app.process import extractFeature
+from app.process import prognosis
 
 import os
 
@@ -23,9 +23,9 @@ def predict():
     features = []
     for key in request.form:
         features.append(request.form[key])
-    x = extractFeature('audio.wav', features)
-
-    return render_template("output.html", result = x)
+    x = prognosis('audio.wav', features)
+    # print(x)
+    return render_template("output.html", result=x)
 
 
 if __name__ == "__main__":
